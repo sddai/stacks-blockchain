@@ -206,11 +206,11 @@ pub struct SimpleCostSpecification {
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq)]
 pub struct ClarityCostFunctionReference {
     pub contract_id: QualifiedContractIdentifier,
-    pub function_name: &'static str,
+    pub function_name: String,
 }
 
 impl ClarityCostFunctionReference {
-    fn new(id: QualifiedContractIdentifier, name: &'static str) -> ClarityCostFunctionReference {
+    fn new(id: QualifiedContractIdentifier, name: String) -> ClarityCostFunctionReference {
         ClarityCostFunctionReference { contract_id: id, function_name: name }
     }
 }
